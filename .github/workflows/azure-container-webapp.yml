@@ -23,6 +23,13 @@
 # For more information on GitHub Actions for Azure: https://github.com/Azure/Actions
 # For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4  # Клонирует ваш код в рабочую область
+  - name: Build and push
+    uses: docker/build-push-action@v5
+    with:
+      context: .
 
 name: Build and deploy a container to an Azure Web App
 
